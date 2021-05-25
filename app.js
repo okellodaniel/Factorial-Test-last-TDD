@@ -10,6 +10,10 @@
  * 3) Joanita Kente Tushabe
  */
 
+/*
+     RECUSSIVE METHOD
+    -------------------
+     */
 function calculateFactorial(n) {
   if (n < 0) {
     throw new Error('Undefined');
@@ -23,6 +27,21 @@ function calculateFactorial(n) {
     return 'undefined';
   }
 }
+
+/*      LOOP METHOD
+      ----------------
+*/
+// function calculateFactorial(num) {
+//   let result = 1;
+//   for (let i = 1; i <= num; i++) {
+//     result *= i;
+//   }
+
+//   return result;
+// }
+
+// const result = factorialize(3);
+// console.log(factorialize(3)); module.exports = factorialize;
 
 // Export the calculate factorial function.
 module.exports = calculateFactorial;

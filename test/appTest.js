@@ -1,30 +1,34 @@
+// Chai dependency
 const { assert } = require('chai');
+
+// Import calculate factorial function
 const calculateFactorial = require('../app');
 
+// Factorial tests
 describe('Calculate Factorial Numbers', () => {
   describe('Handle valid input', () => {
-    it('Should return 1 for factorial of 0', () => {
+    it('calculateFactorial(0) == 1', () => {
       assert.equal(calculateFactorial(0), 1);
     });
-    it('should return 1 for factorial of 1', () => {
+    it('calculateFactorial(1) == 1', () => {
       assert.equal(calculateFactorial(1), 1);
     });
-    it('should return 2 for the factorial of 2', () => {
+    it('calculateFactorial(2) == 2', () => {
       assert.equal(calculateFactorial(2), 2);
     });
-    it('should return 6 for the factorial of 3', () => {
+    it('calculateFactorial(3) == 6', () => {
       assert.equal(calculateFactorial(3), 6);
     });
-    it('shpudl return 120 for the factorial of 5', () => {
+    it('calculateFactorial(5) == 120', () => {
       assert.equal(calculateFactorial(5), 120);
     });
-    describe('Handle Invalid input', () => {
-      it('should return undefined for the factorial of -1', ()=> {
-        assert.equal(calculateFactorial(-1), 'undefined');
-      });
-      it('should return undefined for the factorial of Hello', ()=> {
-        assert.equal(calculateFactorial('Hello'), 'undefined');
-      });
+  });
+  describe('Handle Invalid input', () => {
+    it('calculateFactorial(-1) == undefined', () => {
+      assert.throws(() => calculateFactorial(-1), 'Undefined');
+    });
+    it('calculateFactorial("Hello") == undefined', () => {
+      assert.equal(calculateFactorial('Hello'), 'undefined');
     });
   });
 });
